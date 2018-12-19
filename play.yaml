@@ -1,0 +1,13 @@
+- name: a play that runs entirely on the ansible host
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+  - name: create a file
+    command: touch /home/mallesh/ansible.txt
+  - name: Install git
+    command: sudo apt install git 
+  - name: example copying file with owner and permissions
+    copy:
+      src: /home/mallesh/ansible.txt
+      dest: /home/mallesh/Gangboard/
+
